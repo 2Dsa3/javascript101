@@ -18,7 +18,48 @@
  * Declare la variable local pageId con el ID del elemento HTML donde se mostrará el título.
  * Referencia: https://javascript.info/variables
  */
-pageTitle = "Datos comparativos de frameworks JavaScript modernos";
-pageId = "title";
+
+"use strict";
+
+let pageTitle = "Datos comparativos de frameworks JavaScript modernos";
+let pageId = "title";
 
 // Llama a la función setTitle para establecer el contenido del elemento HTML con el ID especificado
+
+import { setTitle } from "./functions.js";
+
+setTitle(pageId, pageTitle);
+
+function autoejecucion(){
+    console.log("Bienvenidos al sitio web");
+    alert("Bienvenidos al sitio web");
+}
+autoejecucion();
+
+
+const showToast = () => {
+    const toast = document.getElementById("toast-interactive");
+    if (toast) {
+        toast.classList.add("md:block");
+    }
+};
+
+(() => {
+    showToast();
+})();
+
+
+const showVideo = () => {
+    const demo = document.getElementById("demo");
+    if (demo) {
+        demo.addEventListener("click", () => {
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+        });
+    }
+};
+
+(() => {
+    showToast();
+    showVideo();
+})();
+
